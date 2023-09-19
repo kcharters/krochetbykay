@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/stripe/payment','App\Http\Controllers\StripeController@index')->name('stripe.index');
+Route::post('/stripe/payment','App\Http\Controllers\StripeController@store')->name('stripe.store');
+
