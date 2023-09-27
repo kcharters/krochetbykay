@@ -1,5 +1,4 @@
 @extends('layouts.layout')
-
 @section('content')
     <div class="panel panel-default">
         <div class="panel-body">

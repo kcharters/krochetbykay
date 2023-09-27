@@ -1,10 +1,10 @@
+
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
+ <title>Laravel</title>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -13,18 +13,12 @@
     <!-- Styles -->
     @vite(['resources/js/app.js'])
     @vite(['resources/css/app.scss'])
- 
+    
+  
 </head>
 <body>
-<div class="container">
-   <header class="row">
-
-   </header>
-   <div id="main" class="row">
-           @yield('content')
-   </div>
-   <footer class="row">
-   </footer>
-</div>
+   
+    @yield('title')
+    @yield('content')   
 </body>
 </html>
