@@ -12,7 +12,7 @@ SERVER_PORT and SERVER_HOST
 
 or 
 
-php artisan serve --port=8080
+php artisan serve --port=8000
 
 ## installing
 install npm ```npm i```
