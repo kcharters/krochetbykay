@@ -39,7 +39,7 @@
                     </div>
                   </li>
                 <li class="nav-item">
-                     <a class="nav-link" href="{{url('stripe/payment')}}">Stripe</a>
+                     <a class="nav-link" href="{{url('stripe/index')}}">Stripe</a>
                 </li>                
             </ul>
             <form class="form-inline">

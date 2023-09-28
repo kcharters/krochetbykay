@@ -8,3 +8,6 @@ $(document).on('click','.dropdown-toggle',function(e) {
   $('.dropdown-menu').toggle(".dropdown-menu" );
   
 });
+
+
+//Stripe 

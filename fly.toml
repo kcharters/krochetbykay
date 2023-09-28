@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for krochetbykay on 2023-09-19T20:28:02+12:00
+# fly.toml app configuration file generated for krochetbykay on 2023-09-28T15:23:05+13:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -10,7 +10,7 @@ console_command = "php /var/www/html/artisan tinker"
 [build]
   [build.args]
     NODE_VERSION = "18"
-    PHP_VERSION = "8.2"
+    PHP_VERSION = "8.1"
 
 [env]
   APP_ENV = "production"
