@@ -51,7 +51,9 @@
         </div>
     </nav>
     @yield('content') 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
-    @vite(['resources/js/app.js'])
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+    crossorigin="anonymous"></script>    @vite(['resources/js/app.js'])
 </body>
 </html>
