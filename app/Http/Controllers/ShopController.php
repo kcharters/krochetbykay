@@ -16,4 +16,20 @@ class ShopController extends Controller
     {
         return view('shop.bags');
     }
+    public function headwear()
+    {
+        return view('shop.headwear');
+    }
+    public function scarfs()
+    {
+        return view('shop.scarfs');
+    }
+    public function sets()
+    {
+        return view('shop.sets');
+    }
+    public function bandc()
+    {
+        return view('shop.bandc');
+    }
 }
