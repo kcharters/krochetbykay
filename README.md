@@ -20,22 +20,14 @@ install laravel  ```composer global require laravel/installer```
 install composer ```composer install --ignore-platform-reqs```
 install fly.io for production ```iwr https://fly.io/install.ps1 -useb | iex```
 
-## fly.io db localhost
-In this guide you’ll tunnel to your MySQL instance through the use of fly proxy
+## firebase
+```composer require kreait/laravel-firebase```
 
-Open your MySQL application’s fly.toml and take note of the following:
+Next, enable kreait/firebase-php's service provider by opening config/app.php and adding the following code in the providers element of the "Package Service Providers" section.
 
+```Kreait\Laravel\Firebase\ServiceProvider::class```
 
-app = "<mysql-app-name>"
-
-[env]
-  MYSQL_DATABASE = "<database-name>"
-  MYSQL_USER =  "<database-user>"
-Then use fly proxy to tunnel to your MySQL application:
-
-
-fly proxy 3306 -a <mysql-app-name>
-Finally, update your Laravel application’s local .env file with the values from your MySQL fly.toml file:
+[tutorial](https://www.twilio.com/blog/create-restful-crud-api-php-using-laravel-google-firebase#:~:text=To%20access%20Firebase%20in%20Laravel,which%20also%20supports%20Lumen%20projects.)
 
 
 DB_CONNECTION=mysql
