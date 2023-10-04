@@ -13,6 +13,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "firebase": "^10.4.0",
         "jquery": "^3.7.1",
         "requirejs": "^2.3.6",
         "stripe": "^13.7.0"
