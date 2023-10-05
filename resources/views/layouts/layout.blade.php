@@ -35,7 +35,7 @@
                         <a class="dropdown-item" href="{{url('shop/sets')}}">Matching Sets</a>
                       <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="{{url('shop/bags')}}">Bags</a>
-                        <a class="dropdown-item" href="{{url('shop/bandc')}}">Bookmarks and Coasters</a>
+                        <a class="dropdown-item" href="{{url('shop/bandc')}}">Homeware</a>
                     </div>
                   </li>
                 <li class="nav-item">

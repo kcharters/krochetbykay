@@ -29,6 +29,7 @@ Next, enable kreait/firebase-php's service provider by opening config/app.php an
 
 [tutorial](https://www.twilio.com/blog/create-restful-crud-api-php-using-laravel-google-firebase#:~:text=To%20access%20Firebase%20in%20Laravel,which%20also%20supports%20Lumen%20projects.)
 
+[laravel stripe tutorial](https://github.com/thecodeholic/stripe-checkout-laravel)
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
