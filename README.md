@@ -18,7 +18,7 @@ php artisan serve --port=8000
 install npm ```npm i```
 install laravel  ```composer global require laravel/installer```
 install composer ```composer install --ignore-platform-reqs```
-install fly.io for production ```iwr https://fly.io/install.ps1 -useb | iex```
+
 
 ## firebase
 ```composer require kreait/laravel-firebase```
