@@ -15,14 +15,17 @@ $(document).on('click','.dropdown-toggle',function(e) {
 //Firebase
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+const fbapikey = proccess.env.FIREBASE_APIKEY
+
 const firebaseConfig = {
-  apiKey: "AIzaSyD1iEW2nWj0V9bRrio0AScGX4pYVh3Bapo",
+  apiKey: fbapikey,
   authDomain: "krochetbykayknits.firebaseapp.com",
   databaseURL: "https://krochetbykayknits-default-rtdb.firebaseio.com",
   projectId: "krochetbykayknits",
@@ -34,4 +37,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);

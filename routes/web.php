@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,13 +22,10 @@ Route::get('/', function () {
 
 
 //shop pages 
-Route::get('/shop/headwear','App\Http\Controllers\ShopController@headwear')->name('shop.headwear');
-Route::get('/shop/sets','App\Http\Controllers\ShopController@sets')->name('shop.sets');
-Route::get('/shop/scarfs','App\Http\Controllers\ShopController@scarfs')->name('shop.scarfs');
-Route::get('/shop/bandc','App\Http\Controllers\ShopController@bandc')->name('shop.bandc');
-Route::get('/shop/bags','App\Http\Controllers\ShopController@bags')->name('shop.bags');
 
-Route::post('/shop', ['App\Http\Controllers\ShopController', 'create']);
-Route::get('/shop', ['App\Http\Controllers\ShopController', 'index']);
-Route::put('/shop', ['App\Http\Controllers\ShopController', 'edit']);
-Route::delete('/shop', ['App\Http\Controllers\ShopController', 'delete']);
+
+//Admin 
+Route::post('/', [AdminController::class, 'create']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+Route::put('/', [AdminController::class, 'edit']);
+Route::delete('/', [AdminController::class, 'delete']);

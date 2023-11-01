@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "krochetbykayknits"
-  }
+    "default": "krochetbykayknits",
+    "staging": "krochetbykayknits"
+  },
+  "targets": {},
+  "etags": {}
 }
