@@ -36,8 +36,7 @@
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
 
-    <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
-    <!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="../assets/css/animate.css">
@@ -72,31 +71,19 @@
         <nav class="fh5co-nav" role="navigation">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-xs-2">
-                        <div id="fh5co-logo"><a href="index.html">Shop.</a></div>
+                    <div class="col-md-2 col-xs-2">
+                        <img src="../assets/img/knit and crochet1.png" width="100px" height="100px" style="border-radius:25%;"/>
                     </div>
-                    <div class="col-md-6 col-xs-6 text-center menu-1">
+                    <div class="col-md-6 text-center menu-1">
                         <ul>
                             <li class="has-dropdown">
-                                <a href="product.html">Shop</a>
-                                <ul class="dropdown">
-                                    <li><a href="single.html">Single Shop</a></li>
-                                </ul>
+                                <a href={{ route('shop.product') }}>Shop</a>
                             </li>
                             <li><a href="about.html">About</a></li>
-                            <li class="has-dropdown">
-                                <a href="services.html">Services</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Web Design</a></li>
-                                    <li><a href="#">eCommerce</a></li>
-                                    <li><a href="#">Branding</a></li>
-                                    <li><a href="#">API</a></li>
-                                </ul>
-                            </li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
-                    <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+                    <div class="col-md-4 col-xs-4 text-right hidden-xs menu-2">
                         <ul>
                             <li class="search">
                                 <div class="input-group">
@@ -115,24 +102,7 @@
 
             </div>
         </nav>
-        <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner"
-            style="background-image:url(../assets/images/img_bg_2.jpg);">
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2 text-center">
-                        <div class="display-t">
-                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
-                                <h1>About Us</h1>
-                                <h2>Free html5 templates by <a href="https://themewagon.com/theme_tag/free/"
-                                        target="_blank">Themewagon</a></h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
+        
         @yield('content')
 
         <footer id="fh5co-footer" role="contentinfo">

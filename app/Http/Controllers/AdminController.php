@@ -3,51 +3,57 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+
+use Kreait\Firebase\Contract\Auth as FirebaseAuth;
+use Kreait\Firebase\Auth\SignInResult\SignInResult;
+use Kreait\Firebase\Exception\FirebaseException;
+use Illuminate\Validation\ValidationException;
+
+use Illuminate\Support\Facades\Auth;
+use Session;
+use App\Models\User;
 use App\Http\Controllers\FirebaseController;
 
 class AdminController extends Controller
 {
-    private $database;
-    private $auth;
-
-    public function __construct()
-    {
-        $this->$auth = FirebaseController::adminauth();
-        $this->database = FirebaseController::connect();
-    }
-    //
-    public function create(Request $request) 
-    {
-    $this->database
-        ->getReference('test/blogs/' . $request['title'])
-        ->set([
-            'title' => $request['title'] ,
-            'content' => $request['content']
-        ]);
-
-    return response()->json('blog has been created');
-    }
-    public function edit(Request $request) 
-    {
-    $this->database->getReference('test/blogs/' . $request['title'])
-        ->update([
-            'content/' => $request['content']
-        ]);
-
-    return response()->json('blog has been edited');
-    }
-    public function delete(Request $request)
-    {
-    $this->database
-        ->getReference('blog/' . $request['title'])
-        ->remove();
-
-    return response()->json('blog has been deleted');
-    }
     public function index()
     {
         return view('admin.index');
     }
-    
+   
+    protected function login(Request $request)
+    {
+        $auth = FirebaseController::adminauth();
+        try {
+            
+            $signInResult = $auth->signInWithEmailAndPassword(
+                $request["email"],
+                $request["password"]
+            );
+            $user = new User($signInResult->data());
+
+            //uid Session
+            $loginuid = $signInResult->firebaseUserId();
+            Session::put('uid',$loginuid);
+
+            $result = Auth::login($user);
+            return redirect("admin.dashboard");
+
+        } catch (FirebaseException $e) {
+            throw ValidationException::withMessages([
+                $this->username() => [trans("auth.failed")],
+            ]);
+        }
+    }
+    public function username()
+    {
+        return "email";
+    }
+    public function dashboard()
+    {
+        return view('admin.dashboard');
+    }
 }

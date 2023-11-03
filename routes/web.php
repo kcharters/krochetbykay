@@ -22,10 +22,8 @@ Route::get('/', function () {
 
 
 //shop pages 
-
+Route::get('/shop',[ShopController::class,'index'])->name('shop.product');
 
 //Admin 
-Route::post('/', [AdminController::class, 'create']);
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
-Route::put('/', [AdminController::class, 'edit']);
-Route::delete('/', [AdminController::class, 'delete']);
+Route::post('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard');
