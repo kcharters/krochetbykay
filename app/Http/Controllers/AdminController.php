@@ -54,6 +54,19 @@ class AdminController extends Controller
     }
     public function dashboard()
     {
-        return view('admin.dashboard');
+        $database = FirebaseController::connect();
+        $reference = $database->getReference('Products');
+        $snapshot = $reference->getSnapshot();
+        $value = $snapshot->getValue();
+        return view('admin.dashboard',['products'=>$value]);
+    }
+    public function create(Request $request){
+        $database = FirebaseController::connect();
+        $database->getReference('Products')
+        ->push([
+            'title' => $request->title,
+            'description' => $request->description,
+            'price' => $request->price]);
+
     }
 }

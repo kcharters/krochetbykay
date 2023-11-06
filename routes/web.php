@@ -27,3 +27,4 @@ Route::get('/shop',[ShopController::class,'index'])->name('shop.product');
 //Admin 
 Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 Route::post('/admin',[AdminController::class,'dashboard'])->name('admin.dashboard');
+Route::put('/admin',[AdminController::class,'create'])->name('admin.create');
